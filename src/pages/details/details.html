@@ -1,0 +1,17 @@
+<ion-header [ngStyle]="header">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{item.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <img src="{{item.urlToImage}}" style="width: 55%;height: 25%;"/>
+  <h3> {{item.title}}</h3>
+  <div>{{item.author}}</div>
+  <div>
+                        {{item.description}}
+                    </div>
+</ion-content>

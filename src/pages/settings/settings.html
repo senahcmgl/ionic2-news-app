@@ -1,0 +1,59 @@
+
+<ion-header [ngStyle]="header">
+
+  <ion-navbar >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (submit)="setDefaults()">
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>
+          Default Source
+        </ion-label>
+        <ion-select [(ngModel)]="source" name="source">
+         
+        <ion-option value="al-jazeera-english">Al Jazeera English</ion-option>
+        <ion-option value="bbc-news">BBC News</ion-option>
+        <ion-option value="bloomberg">Bloomberg</ion-option>
+        <ion-option value="business-insider">Business Insider</ion-option>
+        <ion-option value="cnbc">CNBC</ion-option>
+        <ion-option value="fortune">Fortune</ion-option>
+        <ion-option value="fox-sports">Fox Sports</ion-option>
+        <ion-option value="hacker-news">Hacker News</ion-option>
+        <ion-option value="national-geographic">National Geographic</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>
+          Sort By
+        </ion-label>
+        <ion-select [(ngModel)]="sort" name="sort">
+          <ion-option value="top">Top</ion-option>
+          <ion-option value="latest">Latest</ion-option>
+        </ion-select>
+        </ion-item>
+      <ion-item>
+        <ion-label fixed>
+          Header Color
+        </ion-label>
+        <ion-select [(ngModel)]="color" name="color">
+          <ion-option value="lightgreen">Green</ion-option>
+          <ion-option value="pink">Pink</ion-option>
+          <ion-option value="lightblue">Blue</ion-option>
+          <ion-option value="khaki">Yellow</ion-option>
+          <ion-option value="none">None</ion-option>
+        </ion-select>
+        </ion-item>
+        
+      <button ion-button type="submit" block>Save Changes</button>
+    </ion-list>
+  </form>
+</ion-content>

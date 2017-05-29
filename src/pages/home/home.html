@@ -1,0 +1,55 @@
+<ion-header [ngStyle]="header">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>News</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Source</ion-label>
+      <ion-select (ionChange)="changeSource()" [(ngModel)]="source" name="source">
+        <ion-option value="al-jazeera-english">Al Jazeera English</ion-option>
+        <ion-option value="ars-technica">Ars Technica</ion-option>
+        <ion-option value="bbc-news">BBC News</ion-option>
+        <ion-option value="bild">Bild</ion-option>
+        <ion-option value="business-insider">Business Insider</ion-option>
+        <ion-option value="cnbc">CNBC</ion-option>
+        <ion-option value="cnn">CNN</ion-option>
+        <ion-option value="daily-mail">Daily Mail</ion-option>
+        <ion-option value="financial-times">Financial Times</ion-option>
+        <ion-option value="fortune">Fortune</ion-option>
+        <ion-option value="fox-sports">Fox Sports</ion-option>
+        <ion-option value="hacker-news">Hacker News</ion-option>
+        <ion-option value="mashable">Mashable</ion-option>
+        <ion-option value="mtv-news">MTV</ion-option>
+        <ion-option value="national-geographic">National Geographic</ion-option>
+        <ion-option value="new-york-magazine">New York Magazine</ion-option>
+        <ion-option value="the-economist">The Economist</ion-option>
+        <ion-option value="the-guardian-uk">The Guardian(UK)</ion-option>
+        <ion-option value="the-new-york-times">The New York Times</ion-option>
+        <ion-option value="the-telegraph">The Telegraph</ion-option>
+        <ion-option value="usa-today">USA Today</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-thumbnail item-left>
+        <img src="{{item.urlToImage}}">
+      </ion-thumbnail>
+      <h1>{{item.title}}</h1>
+      <p>
+        {{item.publishedAt}}
+      </p>
+      <div>
+        {{item.description}}
+      </div>
+      <button ion-button clear item-right (click)="viewItem(item)">View</button>
+
+       </ion-item>
+  </ion-list>
+</ion-content>
