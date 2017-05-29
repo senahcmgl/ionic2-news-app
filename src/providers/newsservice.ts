@@ -16,7 +16,7 @@ export class Newsservice {
         {
           sort_value="top";
         }
-        return this.http.get('https://newsapi.org/v1/articles?source='+source+'&sortBy='+sort_value+'&apiKey=44db0a81e3ae4f2fa7dac9e5e12a4229').
+        return this.http.get('https://newsapi.org/v1/articles?source='+source+'&sortBy='+sort_value+'&apiKey={{YOUR API KEY}}').
         map(res=>res.json());
     }
 }
